@@ -1,0 +1,325 @@
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --green: rgb(15, 184, 15);
+    --pics-radius: 20px;
+    --pics-padding: 3px 5px;
+    --white : white;
+    --global-padding: 10px;
+}
+
+
+
+body {
+    margin: 0;
+  font-family: sans-serif ;
+  width: 1850px;
+  font-size: 16px;
+  margin: 0 auto;
+  background-color: black;
+  
+}
+
+h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+h2{
+    margin-bottom: 9px;
+}
+
+
+/* page structure */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 190px 1fr;
+    
+}
+
+.main{
+    grid-column: 2/3;
+   background: #f0f2f5;
+
+}
+
+.header{
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr ;
+    background-color: var(--white);
+    padding: var(--global-padding);
+}
+
+
+/* header structure */
+
+/* search bar */
+.search-bar{
+    grid-column: 1/3;
+
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="search"]{
+    border-radius: var(--pics-radius);
+    font-size: small;
+    padding: 5px;
+    background-color: gray;
+    flex: 1;
+}
+
+.search-icon{
+    width: 30px;
+}
+
+/* notification bell + pfp  */
+.id-noti{
+    grid-column: 3/4;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.noti-icon {
+  width: 30px;
+}
+
+.name{
+    font-weight: 800;
+}
+
+.noti-button:hover .noti-icon {
+  border-radius: 90px;
+  background-color: aqua;
+}
+
+.noti-button{
+    background-color: var(--white);
+    border: 0;
+}
+
+
+/* name + big pfp */
+.pfp-id{
+    grid-column:1/3 ;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.big-pfp {
+    height: 90px;
+    border-radius: var(--pics-radius);
+    padding: var(--pics-padding);
+}
+
+
+.greetings :last-child{
+    font-weight: 1000;
+    font-size: 20px;
+    margin: 0;
+}
+
+.greetings :first-child{
+    font-weight: 600;
+    margin: 0;
+}
+
+.greetings{
+    justify-self: start;
+}
+
+
+/* buttons */
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.btn{
+    border-radius: var(--pics-radius);
+    width: 90px;
+    height: 50px;
+    background-color: rgb(75, 171, 202);
+    color: var(--white);
+    font-weight: 700 ;
+}
+
+
+/* side bar structure */
+
+.side-bar{
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 100px 300px 100px
+    457px;
+    padding: var(--global-padding);
+    background-color: rgb(39, 164, 202);
+    color: white;
+}
+
+.side-bar>*{
+    padding-left: 30px;
+}
+
+.dashboard{
+    grid-row: 1/2;
+    align-items: center;
+}
+
+.upper-side{
+    grid-row: 2/3;
+}
+.footer-side{
+    grid-row:4/5;
+}
+
+
+/* main content structre*/
+
+.main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content  min-content;
+    padding: var(--global-padding);
+    
+}
+
+.projects{
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+
+/* projects */
+.project-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    row-gap: 90px;
+    padding: var(--global-padding);
+}
+
+.project{
+    height: 250px ;
+    padding: var(--global-padding);
+    display: grid;
+    background-color: var(--white);
+    border-radius: var(--pics-radius);
+    border-left: 10px solid rgb(211, 211, 54);
+    
+}
+.project>*{
+    margin: 0;
+}
+
+.project h3{
+    align-self: center;
+}
+
+.icons{
+    justify-self: end;
+    align-self: end;
+}
+.icons img{
+    margin-left: 25px;
+}
+
+/* announcements */
+
+.announcement-cards{
+    padding: 30px;
+    background-color: white;
+    border-radius: var(--pics-radius);
+
+}
+
+.announcement-cards p{
+    margin-top: 5px;
+    margin-bottom: 3px;
+    color: gray;
+}
+
+hr{
+    margin: 10px 0;
+    border: 1px gray solid;
+}
+
+
+/* trends */
+
+.trend-cards{
+    display: grid;
+    grid-template-rows: repeat(3,calc(300px / 4));
+
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--pics-radius);
+    
+}
+
+.trending  h2{
+    margin-top: 10px;
+}
+
+.trends{
+   display: flex;
+   gap: 20px;
+   
+}
+
+.trends p , .trends h5{
+    margin: 0;
+}
+
+
+/* all profile pictures and icons */
+.pfp{
+    border-radius: var(--pics-radius);
+    padding: var(--pics-padding);
+    height: 50px;
+}
+
+
+.fox, .big-pfp{
+    background-color: var(--green)
+}
+
+.whale{
+ padding-left: 0;
+
+}
+
+.tiger{
+    background-color: green;
+}
+
+
+.dashboard-icon {
+    width: 50px; 
+}
+
+.side-tags{
+    display: flex;
+    gap: 15px;
+}
+
+.project-icons ,.side-icons{
+    width: 30px;
+}
